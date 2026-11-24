@@ -1,32 +1,64 @@
-# Aadil Ali - 3D Interactive Portfolio Website
+# Aadil Ali Portfolio
 
-Official 3D glassmorphism portfolio for **Aadil Ali** (Software Engineering Student & Full-Stack Web Developer).
+A responsive portfolio for Aadil Ali, a Software Engineering student and full-stack web developer.
 
-## 📁 Project Folder Structure
+## Sections
+
+1. About Me
+2. Career Objective
+3. Education
+4. Technical Skills
+5. Featured Projects
+6. Featured Project Case Study
+7. Experience and Internship
+8. Certifications and Achievements
+9. Contact
+
+The page includes mobile navigation, keyboard-friendly controls, certificate lightbox previews, CV view/download links, and a contact form that opens the user's email application.
+
+## Technology
+
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome
+- Google Fonts
+
+## Folder Structure
+
 ```text
 portfolio/
-├── index.html              # Main HTML5 Document
+├── index.html
 ├── css/
-│   └── style.css           # Custom Glassmorphism Stylesheet
+│   └── style.css
 ├── js/
-│   └── script.js            # 3D Tilt, Lightbox, Particle Canvas & Scroll Engine
+│   └── script.js
 ├── assets/
-│   ├── images/             # Profile photos & project screenshots
-│   ├── certificates/       # High-resolution certificates
-│   └── icons/              # Custom brand icons (if needed)
-└── README.md               # Instructions & Customization Guide
+│   ├── ADIL ALI CV.pdf
+│   └── images/
+└── README.md
 ```
 
-## 🚀 How to Run locally
-1. Extract `Aadil_Ali_Portfolio_Complete.zip`.
-2. Open the extracted `portfolio` folder in **Visual Studio Code**.
-3. Right-click `index.html` and select **Open with Live Server** (or simply double-click `index.html` to open in any web browser).
+## Run Locally
 
-## ✏️ Customization & Updating
-- **Personal Details:** Edit `index.html` lines under `#hero` and `#about` sections.
-- **Images:** Replace `profile.jpeg` inside `assets/images/`.
-- **Certificates:** Place certificate images inside `assets/certificates/` and update `src` paths in `index.html`.
-- **Projects:** Add or edit project cards inside the `<section id="projects">` block in `index.html`.
+Open the `portfolio` folder in Visual Studio Code and use Live Server. Alternatively, start a local server from the `portfolio` folder:
 
----
-© 2026 Aadil Ali. Built for high performance & modern tech presentation.
+```powershell
+python -m http.server 5500
+```
+
+Then open the local server address on port `5500` in your browser.
+
+## Deploy
+
+### Netlify
+
+1. Create a new Netlify project.
+2. Deploy the `portfolio` folder or connect this project repository.
+3. Set the publish directory to `portfolio` if deploying the parent folder.
+
+### Vercel
+
+1. Import the project repository in Vercel.
+2. Set the root directory to `portfolio`.
+3. Use the other static-site settings without a build command.

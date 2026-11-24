@@ -3,527 +3,379 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aadil Ali | Full-Stack Web Developer & Software Engineer</title>
-  <meta name="description" content="Official 3D Portfolio of Aadil Ali - Third-Year BS Software Engineering Student at University of Sindh & Web Developer Intern at Technify.">
-  <meta name="keywords" content="Aadil Ali, Software Engineer, Technify, University of Sindh, Web Developer, Full-Stack Developer, PHP, JavaScript, React, Node.js">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Aadil Ali | Software Engineer Portfolio">
-  <meta property="og:description" content="Explore the interactive 3D developer portfolio of Aadil Ali.">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-
-  <!-- Google Fonts -->
+  <title>Aadil Ali | Software Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Aadil Ali, a third-year Software Engineering student and full-stack web developer at the University of Sindh, Jamshoro.">
+  <meta name="keywords" content="Aadil Ali, Software Engineer, Full-Stack Developer, University of Sindh, PHP, JavaScript, React, Node.js">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AA</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Preloader -->
-  <div id="preloader">
+  <div id="preloader" aria-hidden="true">
     <div class="loader-content">
       <div class="spinner"></div>
       <div class="loader-text">&lt;AADIL_ALI /&gt;</div>
-      <p>Loading 3D Portfolio Engine...</p>
     </div>
   </div>
 
-  <!-- Cursor Followers -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <!-- Background Canvas -->
-  <canvas id="bgCanvas"></canvas>
-
-  <!-- Header / Navigation -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand">
+      <a href="#hero" class="nav-brand" aria-label="Aadil Ali portfolio home">
         <span class="brand-code">&lt;AA /&gt;</span>
         <span class="brand-name">Aadil Ali</span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#hero" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#internship" class="nav-link">Experience</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#certificates" class="nav-link">Certificates</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about" class="nav-link">01 About</a>
+        <a href="#objective" class="nav-link">02 Objective</a>
+        <a href="#education" class="nav-link">03 Education</a>
+        <a href="#skills" class="nav-link">04 Skills</a>
+        <a href="#projects" class="nav-link">05 Projects</a>
+        <a href="#case-study" class="nav-link">06 Case Study</a>
+        <a href="#experience" class="nav-link">07 Experience</a>
+        <a href="#certificates" class="nav-link">08 Certificates</a>
+        <a href="#contact" class="nav-link">09 Contact</a>
       </nav>
 
-      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#hero" class="mobile-link">Home</a>
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#internship" class="mobile-link">Experience</a>
-      <a href="#education" class="mobile-link">Education</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#certificates" class="mobile-link">Certificates</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#about" class="mobile-link">01 About</a>
+      <a href="#objective" class="mobile-link">02 Objective</a>
+      <a href="#education" class="mobile-link">03 Education</a>
+      <a href="#skills" class="mobile-link">04 Skills</a>
+      <a href="#projects" class="mobile-link">05 Projects</a>
+      <a href="#case-study" class="mobile-link">06 Case Study</a>
+      <a href="#experience" class="mobile-link">07 Experience</a>
+      <a href="#certificates" class="mobile-link">08 Certificates</a>
+      <a href="#contact" class="mobile-link">09 Contact</a>
+    </nav>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
     <section id="hero" class="hero-section">
       <div class="container hero-container">
         <div class="hero-content reveal">
-          <div class="hero-badge">&lt;SOFTWARE_ENGINEER /&gt;</div>
-          <h1 class="hero-title">AADIL ALI</h1>
+          <div class="hero-badge">SOFTWARE ENGINEER</div>
+          <h1 class="hero-title">Aadil Ali</h1>
           <h2 class="hero-subtitle">Full-Stack Web Developer</h2>
-          <p class="hero-academic">
-            Third-Year Software Engineering Student at <br>
-            <span class="highlight">University of Sindh, Jamshoro</span>
-          </p>
-          <p class="hero-tagline">
-            "Building high-performance web applications with modular architecture, intuitive UI, and clean code."
-          </p>
+          <p class="hero-academic">Third-year Software Engineering student at the University of Sindh, Jamshoro.</p>
+          <p class="hero-tagline">I build full-stack web applications and software tools using PHP, Python, JavaScript, and SQL.</p>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
-            <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-            <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code" aria-hidden="true"></i> View Projects</a>
+            <a href="assets/ADIL%20ALI%20CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> View CV</a>
+            <a href="assets/ADIL%20ALI%20CV.pdf" download class="btn btn-outline"><i class="fa-solid fa-download" aria-hidden="true"></i> Download CV</a>
+            <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <div class="profile-3d-card tilt-element">
-            <div class="glow-ring"></div>
-            <div class="card-inner">
-              <img src="assets/images/profile.jpeg" alt="Aadil Ali" class="profile-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'><rect width='100' height='120' fill='%230b1322'/><circle cx='50' cy='45' r='22' fill='%2300f2fe' opacity='0.25'/><path d='M20,105 C20,80 35,70 50,70 C65,70 80,80 80,105 Z' fill='%2300f2fe' opacity='0.25'/><text x='50' y='114' font-size='7' fill='%2394a3b8' text-anchor='middle'>Aadil Ali Profile</text></svg>';">
-            </div>
-            <div class="floating-badge fb-1">HTML / CSS / JS</div>
-            <div class="floating-badge fb-2">PHP & MySQL</div>
-            <div class="floating-badge fb-3">React & Node.js</div>
+          <div class="profile-card">
+            <img src="assets/images/profile.jpeg" alt="Aadil Ali standing outdoors" class="profile-img">
           </div>
         </div>
       </div>
-
-      <a href="#about" class="scroll-down" aria-label="Scroll Down">
-        <span>SCROLL DOWN</span>
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="about" class="section-padding">
       <div class="container">
         <h2 class="section-heading"><span class="heading-num">01.</span> About Me</h2>
-
         <div class="about-grid">
           <div class="about-bio reveal">
-            <p>
-              I am <strong>Aadil Ali</strong>, a dedicated third-year Software Engineering student at the <strong>University of Sindh, Jamshoro</strong>. My passion lies in creating robust, responsive, and visually compelling web applications.
-            </p>
-            <p>
-              Through academic study and practical developer internships, I have gained deep hands-on experience in full-stack architectures—spanning standard front-end frameworks, backend scripting in PHP and Express.js, and database systems like MySQL and MongoDB.
-            </p>
+            <p>I am <strong>Aadil Ali</strong>, a third-year Software Engineering student at the University of Sindh, Jamshoro. I enjoy turning practical problems into working web applications.</p>
+            <p>I work across the front end and back end, using HTML, CSS, JavaScript, PHP, Node.js, and relational databases. During my web development internship at TECHNIFY, I worked on interface components, application logic, testing, and version control in a team setting.</p>
+            <p>I am most interested in improving my skills, shipping useful projects, and learning how to build and maintain software that people can use every day.</p>
             <div class="about-highlights">
-              <div class="highlight-item"><i class="fa-solid fa-layer-group"></i> Full-Stack Web Development</div>
-              <div class="highlight-item"><i class="fa-solid fa-laptop-code"></i> Responsive UI/UX Design</div>
-              <div class="highlight-item"><i class="fa-solid fa-terminal"></i> Git/GitHub Version Control</div>
+              <div class="highlight-item"><i class="fa-solid fa-code" aria-hidden="true"></i> Full-stack web development</div>
+              <div class="highlight-item"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Responsive interfaces</div>
+              <div class="highlight-item"><i class="fa-brands fa-github" aria-hidden="true"></i> Git and GitHub</div>
             </div>
           </div>
 
-          <!-- Terminal -->
-          <div class="terminal-card tilt-element reveal">
+          <div class="terminal-card reveal">
             <div class="terminal-header">
-              <div class="dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
+              <div class="dots" aria-hidden="true"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
               <span class="terminal-title">aadil@dev-machine:~</span>
             </div>
             <div class="terminal-body">
               <p><span class="prompt">$</span> whoami</p>
               <p class="response">Aadil Ali</p>
               <p><span class="prompt">$</span> education</p>
-              <p class="response">BS Software Engineering (3rd Year) — University of Sindh</p>
-              <p><span class="prompt">$</span> internship</p>
-              <p class="response">Web Developer Intern @ TECHNIFY (1st Position Winner)</p>
+              <p class="response">BSSE — University of Sindh</p>
+              <p><span class="prompt">$</span> focus</p>
+              <p class="response">Full-stack web development</p>
               <p><span class="prompt">$</span> github</p>
-              <p class="response">https://github.com/Aadil-studio</p>
+              <p class="response">github.com/Aadil-studio</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INTERNSHIP SECTION -->
-    <section id="internship" class="section-padding alt-bg">
+    <section id="objective" class="section-padding alt-bg">
       <div class="container">
-        <h2 class="section-heading"><span class="heading-num">02.</span> Experience & Internship</h2>
-
-        <div class="award-banner reveal">
-          <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
-          <div class="award-text">
-            <h3>1ST POSITION DISTINCTION AWARD</h3>
-            <p>Recognized for outstanding Web Development project performance in IT Internship Cohort IV at TECHNIFY.</p>
-          </div>
-        </div>
-
-        <div class="internship-grid">
-          <div class="glass-card tilt-element reveal">
-            <div class="intern-header">
-              <span class="badge-featured">FEATURED ROLE</span>
-              <h3 class="role-title">Web Developer Intern</h3>
-              <h4 class="company-title">TECHNIFY</h4>
-              <p class="period"><i class="fa-regular fa-calendar"></i> June 01, 2026 — July 31, 2026 (2 Months)</p>
-              <p class="location"><i class="fa-solid fa-location-dot"></i> Hyderabad, Pakistan</p>
-            </div>
-            <div class="intern-body">
-              <p>Actively engaged in software design, front-end implementation, and module testing across web application platforms.</p>
-              <ul class="responsibilities">
-                <li><i class="fa-solid fa-check-double"></i> Structured scalable web components using standard HTML5, CSS3, and JavaScript.</li>
-                <li><i class="fa-solid fa-check-double"></i> Implemented interactive UI logic, cross-browser compatibility, and mobile optimization.</li>
-                <li><i class="fa-solid fa-check-double"></i> Used Git and GitHub repositories for collaborative version control and deployment.</li>
-              </ul>
-            </div>
-          </div>
+        <h2 class="section-heading"><span class="heading-num">02.</span> Career Objective</h2>
+        <div class="objective-card reveal">
+          <p>I am seeking opportunities to grow as a full-stack web and software developer. My goal is to work on real products, contribute clean and understandable code, and learn from experienced engineers.</p>
+          <p>I am open to internships and collaborative projects in web development, application development, and software engineering.</p>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION SECTION -->
     <section id="education" class="section-padding">
       <div class="container">
         <h2 class="section-heading"><span class="heading-num">03.</span> Education</h2>
-
         <div class="timeline">
-          <div class="timeline-item tilt-element reveal">
+          <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="glass-card">
               <span class="timeline-date">2024 – Present</span>
-              <h3>Bachelor of BS Software Engineering (BSSE)</h3>
+              <h3>Bachelor of Science in Software Engineering (BSSE)</h3>
               <h4>University of Sindh, Jamshoro</h4>
-              <p>Currently in 3rd Year. Focused on Software Engineering, Web Technologies, Database Systems, Computer Architecture, and Algorithms.</p>
+              <p>Currently in the third year, studying software development, databases, web technologies, algorithms, and computer science fundamentals.</p>
             </div>
           </div>
-
-          <div class="timeline-item tilt-element reveal">
+          <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="glass-card">
               <span class="timeline-date">2021 – 2023</span>
               <h3>Intermediate (Pre-Engineering)</h3>
-              <h4>GOVT: HIGHER SECONDARY SCHOOL KAKAR</h4>
-              <p>Completed pre-engineering studies with high quantitative and analytical standing.</p>
+              <h4>Government Higher Secondary School Kakar</h4>
+              <p>Completed intermediate studies in the pre-engineering stream.</p>
             </div>
           </div>
-
-          <div class="timeline-item tilt-element reveal">
+          <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="glass-card">
               <span class="timeline-date">2019 – 2021</span>
               <h3>Matriculation (Science)</h3>
-              <h4>GOVT: HIGH SCHOOL KHANPUR</h4>
-              <p>Foundational secondary science curriculum.</p>
+              <h4>Government High School Khanpur</h4>
+              <p>Completed secondary school science studies.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
     <section id="skills" class="section-padding alt-bg">
       <div class="container">
         <h2 class="section-heading"><span class="heading-num">04.</span> Technical Skills</h2>
-
         <div class="skills-categories">
-          <!-- Frontend -->
           <div class="skill-category reveal">
-            <h3 class="category-title"><i class="fa-solid fa-desktop"></i> Frontend Development</h3>
+            <h3 class="category-title"><i class="fa-solid fa-desktop" aria-hidden="true"></i> Frontend</h3>
             <div class="skills-grid">
-              <div class="skill-card tilt-element"><i class="fa-brands fa-html5" style="color: #e34f26;"></i><span>HTML5</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i><span>CSS3</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><span>JavaScript</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-react" style="color: #61dafb;"></i><span>React.js</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i><span>Bootstrap</span></div>
+              <div class="skill-card"><i class="fa-brands fa-html5" aria-hidden="true"></i><span>HTML5</span></div>
+              <div class="skill-card"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i><span>CSS3</span></div>
+              <div class="skill-card"><i class="fa-brands fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+              <div class="skill-card"><i class="fa-brands fa-react" aria-hidden="true"></i><span>React.js</span></div>
+              <div class="skill-card"><i class="fa-brands fa-bootstrap" aria-hidden="true"></i><span>Bootstrap</span></div>
             </div>
           </div>
-
-          <!-- Backend & Database -->
           <div class="skill-category reveal">
-            <h3 class="category-title"><i class="fa-solid fa-server"></i> Backend & Databases</h3>
+            <h3 class="category-title"><i class="fa-solid fa-server" aria-hidden="true"></i> Backend & Databases</h3>
             <div class="skills-grid">
-              <div class="skill-card tilt-element"><i class="fa-brands fa-php" style="color: #777bb4;"></i><span>PHP</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-node-js" style="color: #339933;"></i><span>Node.js</span></div>
-              <div class="skill-card tilt-element"><i class="fa-solid fa-cubes"></i><span>Express.js</span></div>
-              <div class="skill-card tilt-element"><i class="fa-solid fa-database" style="color: #00758f;"></i><span>MySQL</span></div>
-              <div class="skill-card tilt-element"><i class="fa-solid fa-leaf" style="color: #47a248;"></i><span>MongoDB</span></div>
+              <div class="skill-card"><i class="fa-brands fa-php" aria-hidden="true"></i><span>PHP</span></div>
+              <div class="skill-card"><i class="fa-brands fa-node-js" aria-hidden="true"></i><span>Node.js</span></div>
+              <div class="skill-card"><i class="fa-solid fa-cubes" aria-hidden="true"></i><span>Express.js</span></div>
+              <div class="skill-card"><i class="fa-solid fa-database" aria-hidden="true"></i><span>MySQL</span></div>
+              <div class="skill-card"><i class="fa-solid fa-leaf" aria-hidden="true"></i><span>MongoDB</span></div>
             </div>
           </div>
-
-          <!-- Tools -->
           <div class="skill-category reveal">
-            <h3 class="category-title"><i class="fa-solid fa-wrench"></i> Tools & Technologies</h3>
+            <h3 class="category-title"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Languages & Developer Tools</h3>
             <div class="skills-grid">
-              <div class="skill-card tilt-element"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i><span>Git</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
-              <div class="skill-card tilt-element"><i class="fa-solid fa-code" style="color: #00599c;"></i><span>C++</span></div>
-              <div class="skill-card tilt-element"><i class="fa-brands fa-java" style="color: #5382a1;"></i><span>Java</span></div>
-              <div class="skill-card tilt-element"><i class="fa-solid fa-laptop-code"></i><span>VS Code / XAMPP</span></div>
+              <div class="skill-card"><i class="fa-solid fa-code" aria-hidden="true"></i><span>C++</span></div>
+              <div class="skill-card"><i class="fa-brands fa-java" aria-hidden="true"></i><span>Java</span></div>
+              <div class="skill-card"><i class="fa-brands fa-python" aria-hidden="true"></i><span>Python</span></div>
+              <div class="skill-card"><i class="fa-brands fa-git-alt" aria-hidden="true"></i><span>Git</span></div>
+              <div class="skill-card"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></div>
+              <div class="skill-card"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><span>VS Code</span></div>
+              <div class="skill-card"><i class="fa-solid fa-server" aria-hidden="true"></i><span>XAMPP</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section id="projects" class="section-padding">
       <div class="container">
         <h2 class="section-heading"><span class="heading-num">05.</span> Featured Projects</h2>
-
         <div class="projects-grid">
-          
-          <!-- Project 1 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">01</span>
-              <h3>UniPortal Faculty Dashboard</h3>
-            </div>
-            <p class="project-desc">
-              A robust web application for university faculty members to manage courses, record student attendance, grade exams, and publish announcements.
-            </p>
-            <div class="project-tech">
-              <span>PHP</span><span>MySQL</span><span>HTML5</span><span>CSS3</span><span>Bootstrap</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-university" aria-hidden="true"></i><span>UniPortal preview</span></div>
+            <div class="project-header"><span class="project-num">01</span><h3>UniPortal Faculty Dashboard</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> Faculty tasks such as attendance, grades, courses, and announcements were spread across disconnected processes.</p><p><strong>Solution:</strong> Built a central PHP dashboard with database-backed workflows for routine academic administration.</p></div>
+            <div class="project-tech"><span>PHP</span><span>MySQL</span><span>HTML5</span><span>CSS3</span><span>Bootstrap</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/faculty-dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
 
-          <!-- Project 2 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">02</span>
-              <h3>AURUM E-Commerce & 3D Viewer</h3>
-            </div>
-            <p class="project-desc">
-              An interactive web application featuring custom dark-mode styling, 3D product view controls, regex checkout form validation, and responsive cart UI.
-            </p>
-            <div class="project-tech">
-              <span>JavaScript</span><span>Three.js</span><span>CSS Variables</span><span>HTML5</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-gem" aria-hidden="true"></i><span>AURUM preview</span></div>
+            <div class="project-header"><span class="project-num">02</span><h3>AURUM E-Commerce &amp; 3D Viewer</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> Customers needed a clear product view and a simple shopping flow.</p><p><strong>Solution:</strong> Created a responsive storefront with a 3D product viewer, cart interface, and checkout validation.</p></div>
+            <div class="project-tech"><span>JavaScript</span><span>Three.js</span><span>CSS3</span><span>HTML5</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/aurum-E-commerce" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
 
-          <!-- Project 3 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">03</span>
-              <h3>Sentiment Analysis Application</h3>
-            </div>
-            <p class="project-desc">
-              A NLP-based feedback analyzer that processes incoming textual inputs and classifies feedback into positive, neutral, or negative categories.
-            </p>
-            <div class="project-tech">
-              <span>Node.js</span><span>Express.js</span><span>JavaScript</span><span>HTML/CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Sentiment preview</span></div>
+            <div class="project-header"><span class="project-num">03</span><h3>Sentiment Analysis Application</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> Reading and sorting written feedback manually took time.</p><p><strong>Solution:</strong> Built a web application that classifies text as positive, neutral, or negative.</p></div>
+            <div class="project-tech"><span>Node.js</span><span>Express.js</span><span>JavaScript</span><span>HTML/CSS</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/Sentiment-Analysis-project" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
 
-          <!-- Project 4 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">04</span>
-              <h3>Gold Price Predictor</h3>
-            </div>
-            <p class="project-desc">
-              An interactive web application designed to compute and forecast gold market rates based on historical data points and mathematical estimation algorithms.
-            </p>
-            <div class="project-tech">
-              <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Chart.js</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>Gold predictor preview</span></div>
+            <div class="project-header"><span class="project-num">04</span><h3>Gold Price Predictor</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> Historical gold values were difficult to review and estimate from raw numbers.</p><p><strong>Solution:</strong> Added charts and a simple estimation interface for exploring market trends.</p></div>
+            <div class="project-tech"><span>Python</span><span>JavaScript</span><span>Chart.js</span><span>HTML/CSS</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/price-analyser" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
 
-          <!-- Project 5 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">05</span>
-              <h3>Full-Stack Blog Platform</h3>
-            </div>
-            <p class="project-desc">
-              A dynamic content platform supporting user authentication, CRUD post management, comment handling, and database integration.
-            </p>
-            <div class="project-tech">
-              <span>Node.js</span><span>Express.js</span><span>EJS</span><span>MongoDB</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-blog" aria-hidden="true"></i><span>Blog preview</span></div>
+            <div class="project-header"><span class="project-num">05</span><h3>Full-Stack Blog Platform</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> A small publishing workflow needed accounts, posts, and comments in one place.</p><p><strong>Solution:</strong> Developed authentication and CRUD features backed by MongoDB.</p></div>
+            <div class="project-tech"><span>Node.js</span><span>Express.js</span><span>EJS</span><span>MongoDB</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/blog-platform" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
 
-          <!-- Project 6 -->
-          <div class="project-card glass-card tilt-element reveal">
-            <div class="project-header">
-              <span class="project-num">06</span>
-              <h3>Interactive 3D Developer Portfolio</h3>
-            </div>
-            <p class="project-desc">
-              My official single-page portfolio featuring glassmorphism elements, custom canvas animations, tilt effects, terminal card, and lightbox viewers.
-            </p>
-            <div class="project-tech">
-              <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>GitHub Pages</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i class="fa-brands fa-github"></i> GitHub Code</a>
-            </div>
-          </div>
-
+          <article class="project-card glass-card reveal">
+            <div class="project-preview"><i class="fa-solid fa-user-astronaut" aria-hidden="true"></i><span>Portfolio preview</span></div>
+            <div class="project-header"><span class="project-num">06</span><h3>Developer Portfolio</h3></div>
+            <div class="project-details"><p><strong>Problem:</strong> My projects and skills needed to be presented in one accessible place.</p><p><strong>Solution:</strong> Built this responsive portfolio with semantic sections, certificate previews, and CV links.</p></div>
+            <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span></div>
+            <div class="project-links"><a href="https://github.com/Aadil-studio/adil-portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATES SECTION -->
+    <section id="case-study" class="section-padding alt-bg">
+      <div class="container">
+        <h2 class="section-heading"><span class="heading-num">06.</span> Featured Project Case Study</h2>
+        <article class="case-study reveal">
+          <div class="case-study-header">
+            <span class="case-label">UNIPORTAL FACULTY DASHBOARD</span>
+            <h3>From disconnected faculty tasks to one dashboard</h3>
+          </div>
+          <div class="case-study-grid">
+            <div><h4>Problem</h4><p>Faculty information and routine teaching tasks needed one organized interface.</p></div>
+            <div><h4>My Role</h4><p>I worked on the interface, PHP application logic, database queries, and testing.</p></div>
+            <div><h4>Development Process &amp; Tech Choices</h4><p>I used PHP and MySQL for server-side workflows, then HTML, CSS, and Bootstrap for a responsive interface.</p></div>
+            <div><h4>Challenges Faced</h4><p>Keeping records consistent across courses and attendance flows required careful form handling and SQL validation.</p></div>
+            <div><h4>Final Outcome</h4><p>The project provides a practical dashboard for courses, student attendance, grades, and announcements.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section-padding">
+      <div class="container">
+        <h2 class="section-heading"><span class="heading-num">07.</span> Experience &amp; Internship</h2>
+        <div class="award-banner reveal">
+          <div class="award-icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+          <div class="award-text"><h3>1st Position Distinction Award</h3><p>Received recognition for project performance during the IT Internship Cohort IV at TECHNIFY.</p></div>
+        </div>
+        <div class="internship-grid">
+          <div class="glass-card reveal">
+            <div class="intern-header">
+              <span class="badge-featured">INTERNSHIP</span>
+              <h3 class="role-title">Web Developer Intern</h3>
+              <h4 class="company-title">TECHNIFY</h4>
+              <p class="period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 1 – July 31, 2026</p>
+              <p class="location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Hyderabad, Pakistan</p>
+            </div>
+            <ul class="responsibilities">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Built responsive interface components with HTML5, CSS3, and JavaScript.</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Worked with Git and GitHub to track changes and review code.</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Tested application features and corrected layout and interaction issues.</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Collaborated with team members to complete assigned web development tasks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="certificates" class="section-padding alt-bg">
       <div class="container">
-        <h2 class="section-heading"><span class="heading-num">06.</span> Certifications & Achievements</h2>
-
+        <h2 class="section-heading"><span class="heading-num">08.</span> Certifications &amp; Achievements</h2>
         <div class="certs-grid">
-          
-          <!-- Cert 1 -->
-          <div class="cert-card glass-card tilt-element reveal" onclick="openLightbox('assets/images/technify-completion-certificate.jpeg', 'Technify Internship Completion Certificate')">
-            <div class="cert-img-container">
-              <img src="assets/images/technify-completion-certificate.jpeg" alt="Technify Completion Certificate" class="cert-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'><rect width='100' height='70' fill='%230b1322'/><text x='50' y='35' font-size='6' fill='%2300f2fe' text-anchor='middle'>Technify Completion Certificate</text></svg>';">
-              <div class="cert-overlay"><i class="fa-solid fa-expand"></i> View Full Screen</div>
-            </div>
-            <h4>Technify Internship Completion</h4>
-            <p>Web Developer Intern — Cohort IV</p>
+          <button class="cert-card glass-card reveal" type="button" onclick="openLightbox('assets/images/technify-completion-certificate.jpeg', 'Technify Internship Completion Certificate')" aria-label="View Technify completion certificate">
+            <div class="cert-img-container"><img src="assets/images/technify-completion-certificate.jpeg" alt="Technify internship completion certificate" class="cert-img"><div class="cert-overlay"><i class="fa-solid fa-expand" aria-hidden="true"></i> View Certificate</div></div>
+            <h4>Technify Internship Completion</h4><p>Web Developer Intern — Cohort IV</p>
+          </button>
+          <button class="cert-card glass-card reveal" type="button" onclick="openLightbox('assets/images/technify-recognition-certificate.jpg', 'Technify 1st Position Award Certificate')" aria-label="View Technify first position award">
+            <div class="cert-img-container"><img src="assets/images/technify-recognition-certificate.jpg" alt="Technify first position distinction award" class="cert-img"><div class="cert-overlay"><i class="fa-solid fa-expand" aria-hidden="true"></i> View Certificate</div></div>
+            <h4>1st Position Distinction Award</h4><p>Web Development Project — TECHNIFY</p>
+          </button>
+          <button class="cert-card glass-card reveal" type="button" onclick="openLightbox('assets/images/Google%20AI%20Professional%20Certificate.jpg', 'Google AI Professional Certificate')" aria-label="View Google AI professional certificate">
+            <div class="cert-img-container"><img src="assets/images/Google%20AI%20Professional%20Certificate.jpg" alt="Google AI professional certificate" class="cert-img"><div class="cert-overlay"><i class="fa-solid fa-expand" aria-hidden="true"></i> View Certificate</div></div>
+            <h4>Google AI Professional Certificate</h4><p>AI and data analytics certificate</p>
+          </button>
+          <div class="cert-card glass-card reveal">
+            <div class="cert-icon-large"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <h4>Diploma in IT (DIT)</h4><p>Technical Training Board — Information Technology</p>
           </div>
-
-          <!-- Cert 2 -->
-          <div class="cert-card glass-card tilt-element reveal" onclick="openLightbox('assets/images/technify-recognition-certificate.jpg', 'Technify 1st Position Award Certificate')">
-            <div class="cert-img-container">
-              <img src="assets/images/technify-recognition-certificate.jpg" alt="Technify Recognition Certificate" class="cert-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'><rect width='100' height='70' fill='%230b1322'/><text x='50' y='35' font-size='6' fill='%23ffbd2e' text-anchor='middle'>1st Position Distinction Award</text></svg>';">
-              <div class="cert-overlay"><i class="fa-solid fa-expand"></i> View Full Screen</div>
-            </div>
-            <h4>1st Position Distinction Award</h4>
-            <p>Web Development Project — Technify</p>
-          </div>
-
-          <!-- Cert 3 -->
-          <div class="cert-card glass-card tilt-element reveal" onclick="openLightbox('assets/images/Google%20AI%20Professional%20Certificate.jpg', 'Google AI Professional Certificate')">
-            <div class="cert-img-container">
-              <img src="assets/images/Google%20AI%20Professional%20Certificate.jpg" alt="Google AI Professional Certificate" class="cert-img">
-              <div class="cert-overlay"><i class="fa-solid fa-expand"></i> View Full Screen</div>
-            </div>
-            <h4>Google AI Professional Certificate</h4>
-            <p>Completed 7-course program in AI, Prompt Engineering & Data Analytics.</p>
-          </div>
-
-          <!-- Cert 4 -->
-          <div class="cert-card glass-card tilt-element reveal">
-            <div class="cert-icon-large"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h4>Diploma in IT (DIT)</h4>
-            <p>Technical Training Board — Information Technology Fundamentals.</p>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="section-padding">
       <div class="container">
-        <h2 class="section-heading"><span class="heading-num">07.</span> Get In Touch</h2>
-
+        <h2 class="section-heading"><span class="heading-num">09.</span> Contact</h2>
         <div class="contact-grid">
           <div class="contact-info glass-card reveal">
-            <h3>Let's Connect</h3>
-            <p>I am eager to explore software engineering positions, web development internships, and collaborative opportunities.</p>
-            
+            <h3>Let's connect</h3>
+            <p>I am interested in software development internships and web projects where I can learn and contribute.</p>
             <div class="contact-details">
-              <a href="mailto:adilalihingoro7@gmail.com" class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <div>
-                  <span>Email</span>
-                  <strong>aadilaliwb@gamil.com</strong>
-                </div>
-              </a>
-
-             
-
-              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener" class="contact-item">
-                <i class="fa-brands fa-github"></i>
-                <div>
-                  <span>GitHub</span>
-                  <strong>github.com/Aadil-studio</strong>
-                </div>
-              </a>
+              <a href="mailto:adilalihingoro7@gmail.com" class="contact-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i><div><span>Email</span><strong>adilalihingoro7@gmail.com</strong></div></a>
+              <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-github" aria-hidden="true"></i><div><span>GitHub</span><strong>github.com/Aadil-studio</strong></div></a>
+              <div class="contact-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><div><span>Location</span><strong>Jamshoro / Hyderabad, Sindh, Pakistan</strong></div></div>
             </div>
           </div>
-
-          <!-- Interactive Form -->
-          <form class="contact-form glass-card reveal" onsubmit="event.preventDefault(); alert('Thank you for reaching out, Aadil will reply shortly!');">
-            <h3>Send Message</h3>
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Doe" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" placeholder="john@example.com" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" rows="4" placeholder="Hello Aadil, I would like to discuss..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <form class="contact-form glass-card reveal" id="contactForm">
+            <h3>Send a message</h3>
+            <div class="form-group"><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="email">Your email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Write your message" required></textarea></div>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</button>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Lightbox Modal for Certificates -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightboxImg" src="" alt="Certificate View">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview" onclick="closeLightbox()">
+    <button class="lightbox-close" type="button" aria-label="Close certificate preview">&times;</button>
+    <img id="lightboxImg" alt="Certificate preview">
     <p id="lightboxCaption"></p>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-brand">&lt;AA /&gt; Aadil Ali</div>
-      <p>Third-Year Software Engineering Student • University of Sindh, Jamshoro</p>
-      <div class="footer-links">
-        <a href="https://github.com/Aadil-studio" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:adilalihingoro7@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-      <p class="copyright">© 2026 Aadil Ali. All Rights Reserved.</p>
+      <p>Software Engineering student · University of Sindh, Jamshoro</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/Aadil-studio" target="_blank" rel="noopener noreferrer" aria-label="Aadil Ali on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+      </nav>
+      <p class="copyright">© 2026 Aadil Ali. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- Scripts -->
   <script src="js/script.js"></script>
 </body>
 </html>
